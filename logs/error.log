@@ -1,0 +1,20 @@
+2017/04/20 09:16:48 [error] 3645#0: *6 directory index of "/var/www/html/class/public_html/" is forbidden, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", host: "class.johnthelinux.com"
+2017/04/20 09:16:50 [error] 3645#0: *6 directory index of "/var/www/html/class/public_html/" is forbidden, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", host: "class.johnthelinux.com"
+2017/04/20 09:17:29 [crit] 3645#0: *10 connect() to unix:/run/php-fpm/www.sock failed (2: No such file or directory) while connecting to upstream, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/www.sock:", host: "class.johnthelinux.com"
+2017/04/20 09:17:45 [crit] 3645#0: *15 connect() to unix:/run/php-fpm/www.sock failed (2: No such file or directory) while connecting to upstream, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/www.sock:", host: "class.johnthelinux.com"
+2017/04/20 09:17:47 [crit] 3645#0: *19 connect() to unix:/run/php-fpm/www.sock failed (2: No such file or directory) while connecting to upstream, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/www.sock:", host: "class.johnthelinux.com"
+2017/04/20 09:51:30 [error] 3645#0: *34 directory index of "/var/www/html/class/public_html/" is forbidden, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", host: "class.johnthelinux.com"
+2017/04/20 09:51:31 [error] 3645#0: *34 directory index of "/var/www/html/class/public_html/" is forbidden, client: 37.111.7.243, server: class.johnthelinux.com, request: "GET / HTTP/1.1", host: "class.johnthelinux.com"
+2017/04/20 09:51:37 [error] 3645#0: *34 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/var/www/html/class/public_html/storage/logs/laravel.log" could not be opened: failed to open stream: Permission denied in /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(616): Monolog\Logger->addRecord(400, Object(UnexpectedValueException), Array)
+#3 /var/www/html/class/public_html/vendor/laravel/framework/src/Illuminate/Log/Writer.php(203): Monolog\Logger->error(Object(UnexpectedValueException), Array)
+#4 /var/www/html/class/public_html/vendor/laravel/framework/src/Illuminate/Log/Wri...
+PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/var/www/html/class/public_html/storage/logs/laravel.log" could not be opened: failed to open stream: Permission denied in /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /var/www/html/class/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(616): Monolog\Logger->addRecord(400, Object(Symfony\Component\Debug\Exception\FatalErrorException), Array)
+#3 /var/www/html/class/public_html/vendor/laravel/framework/src/Illuminate/Log/Writer.php(203): Monolog\Logger->error(Object(Symfony\Component\Debug\E
