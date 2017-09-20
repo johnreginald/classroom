@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Student;
-
 use App\Batch;
+use App\Http\Requests\StudentRequest;
+use App\Student;
+use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
@@ -27,7 +26,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::active();
+        $students = Student::active(15);
         return view('students.index', compact('students'));
     }
 
@@ -47,11 +46,12 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
-        Student::create( $request->all() );
-
-        return redirect('/');   
+        $student = Student::create( $request->all() );
+        return redirect()->action(
+            'StudentController@show', ['id' => $student->id]
+        );   
     }
 
     /**

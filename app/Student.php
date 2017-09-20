@@ -34,9 +34,9 @@ class Student extends Model
         return $this->belongsTo('App\Batch');
     }
 
-    public function scopeActive($query)
+    public function scopeActive($query, $paginate)
     {  
-        return $query->where('status', 'active')->latest()->get();
+        return $query->where('status', 'active')->latest()->paginate($paginate);
     }
 
     // public function setNameAttribute($name)

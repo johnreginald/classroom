@@ -41,7 +41,6 @@ class BatchController extends Controller
     public function store(Request $request)
     {
         Batch::create( $request->all() );
-
         return redirect('/');   
     }
 

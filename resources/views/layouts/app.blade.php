@@ -80,7 +80,16 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 visible-lg visible-md">
+                    @include('layouts.sidebar')
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

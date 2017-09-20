@@ -45,6 +45,7 @@ class ReportController extends Controller
      */
     public function store(Request $request, $student_id)
     {
+        // Create a Payment Report
         Report::create([
             'fee' => $request->fee,
             'status' => $request->status,
@@ -52,7 +53,14 @@ class ReportController extends Controller
             'batch_id' => $request->batch_id
         ]);
 
-        return redirect('report');
+        // Update Batch 
+        $student = Student::findOrFail($student_id);
+        $student->batch_id = $request->batch_id;
+        $student->save(); 
+
+        return redirect()->action(
+            'StudentController@show', ['id' => $student_id]
+        );
     }
 
     /**

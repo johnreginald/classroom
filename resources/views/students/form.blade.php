@@ -10,7 +10,7 @@
 
 <div class="form-group">
     <label for="gender">Gender</label>
-    {{ Form::select('gender', ['f' => "Female", 'm' => "Male"], null, ['placeholder' => "Choose Gender", 'class' => 'form-control']) }}
+    {{ Form::select('gender', ['female' => "Female", 'male' => "Male"], null, ['placeholder' => "Choose Gender", 'class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
