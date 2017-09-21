@@ -20,12 +20,6 @@
                     <dt>Gender :</dt>
                     <dd>@if( "m" == $student->gender ) Male @else Female @endif</dd><br>
 
-                    <dt>Date of Birth :</dt>
-                    <dd>{{ \Carbon\Carbon::parse($student->dob)->toFormattedDateString() }}</dd><br>
-                    
-                    <dt>NRC ID :</dt>
-                    <dd>{{ $student->nrc }}</dd><br>
-
                     <dt>Address :</dt>
                     <dd>
                         <p style="word-wrap: break-word;">

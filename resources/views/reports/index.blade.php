@@ -1,65 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
-    <div class="col-md-8">
-        <div class="panel panel-default">
-            <div class="panel-heading">Report</div>        
+<div class="panel panel-default">
+    <div class="panel-heading">Report</div>        
 
-            <div class="panel-body">
-                <table class="table table-hover">
-                    <tr>
-                        <th>Student Name</th>
-                        <th>Tuition Fee</th>
-                        <th>Status</th>
-                        <th>Batch</th>
-                        <th>Actions</th>
-                    </tr>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <tr>
+                <th>Student Name</th>
+                <th>Tuition Fee</th>
+                <th>Status</th>
+                <th>Batch</th>
+                <th>Actions</th>
+            </tr>
 
-                   @forelse( $reports as $report )
+           @forelse( $reports as $report )
 
-                        <tr>
-                            <td>
-                                <a href="{{ action("StudentController@show", $report->student->id) }}">
-                                    {{ $report->student->name }}
-                                </a>
-                            </td>
-                            <td>{{ $report->fee }}</td>
-                            <td>
-                                @if ( "SUBMITTED" === $report->status )
-                                    <span class="glyphicon glyphicon-ok-sign text-success" aria-hidden="true"></span>
-                                @else
-                                    <span class="glyphicon glyphicon-remove-sign text-danger" aria-hidden="true"></span>
-                                @endif
-                                {{ $report->status }}
-                            </td>
-                            <td>{{ $report->batch->name }}</td>
-                            <td>                                    
-                                {{ Form::open(['action' => ["ReportController@destroy", $report->id], 'method' => "DELETE"]) }}
+                <tr>
+                    <td>
+                        <a href="{{ action("StudentController@show", $report->student->id) }}">
+                            {{ $report->student->name }}
+                        </a>
+                    </td>
+                    <td>{{ $report->fee }}</td>
+                    <td>
+                        @if ( "SUBMITTED" === $report->status )
+                            <span class="glyphicon glyphicon-ok-sign text-success" aria-hidden="true"></span>
+                        @else
+                            <span class="glyphicon glyphicon-remove-sign text-danger" aria-hidden="true"></span>
+                        @endif
+                        {{ $report->status }}
+                    </td>
+                    <td>{{ $report->batch->name }}</td>
+                    <td>                                    
+                        {{ Form::open(['action' => ["ReportController@destroy", $report->id], 'method' => "DELETE"]) }}
 
-                                    <a class="tooltips" href="{{ action("ReportController@edit", $report->id) }}" data-placement="top" title="Edit">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>
-                                    </a>
+                            <a class="tooltips" href="{{ action("ReportController@edit", $report->id) }}" data-placement="top" title="Edit">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>
+                            </a>
 
-                                    <a href="#" onclick="$(this).closest('form').submit();">
-                                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-                                    </a>
+                            <a href="#" onclick="$(this).closest('form').submit();">
+                                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                            </a>
 
-                                {{ Form::close() }}                                    
-                            </td>
-                        </tr>
+                        {{ Form::close() }}                                    
+                    </td>
+                </tr>
 
-                    @empty
-                        
-                        <h3 class="text-center">No Report Yet</h3>
-                        
-                    @endforelse
-                </table>
-            </div>
-        </div>
+            @empty
+                
+                <h3 class="text-center">No Report Yet</h3>
+                
+            @endforelse
+        </table>
     </div>
-
-    <div class="col-md-4">
+</div>
+    <!-- <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">Overall Status</div>
 
@@ -73,6 +69,5 @@
                 </dl>
             </div>
         </div>
-    </div>
-</div>
+    </div> -->
 @endsection

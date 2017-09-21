@@ -5,7 +5,6 @@
     <div class="panel-heading">Register New Student</div>
 
     <div class="panel-body">
-    	@include('message')
         {{ Form::open(['action' => "StudentController@store", "method" => "POST"]) }}
 
             @include("students.form", ["button" => "Register"])         

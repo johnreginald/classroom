@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Batch;
+use App\Http\Requests\BatchRequest;
 use Illuminate\Http\Request;
 
 class BatchController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +49,7 @@ class BatchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BatchRequest $request)
     {
         Batch::create( $request->all() );
         return redirect('/');   
@@ -73,7 +84,7 @@ class BatchController extends Controller
      * @param  \App\Batch  $batch
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Batch $batch)
+    public function update(BatchRequest $request, Batch $batch)
     {
         $batch->update( $request->all() );
 

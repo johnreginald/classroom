@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
 
 Route::post('updateBatch/{id}', 'StudentController@updateBatch');
@@ -31,8 +27,6 @@ Route::resource('report', 'ReportController', [
 	]
 ]);
 
-Route::get('/home', 'HomeController@index');
-
 Route::get('/', function() {
-    return redirect('home');
+    return redirect('students');
 });

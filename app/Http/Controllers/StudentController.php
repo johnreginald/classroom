@@ -87,7 +87,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentRequest $request, $id)
     {
         $student = Student::findOrFail($id);
 
@@ -109,7 +109,7 @@ class StudentController extends Controller
         return redirect('students');
     }
 
-    public function updateBatch(Request $request, $id)
+    public function updateBatch(StudentRequest $request, $id)
     {
         $student = Student::findOrFail($id);
         
