@@ -18,7 +18,7 @@
                     <dd>{{ $student->phone }}</dd><br>
                     
                     <dt>Gender :</dt>
-                    <dd>@if( "m" == $student->gender ) Male @else Female @endif</dd><br>
+                    <dd>@if( "male" == $student->gender ) Male @else Female @endif</dd><br>
 
                     <dt>Address :</dt>
                     <dd>

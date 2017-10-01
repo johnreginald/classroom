@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -81,13 +81,8 @@
         </nav>
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 visible-lg visible-md">
-                    @include('layouts.sidebar')
-                </div>
-                <div class="col-md-9 col-sm-12 col-xs-12">
-                    @yield('content')
-                </div>
+            <div class="col-md-8 col-md-offset-2">
+                @yield('content')
             </div>
         </div>
     </div>

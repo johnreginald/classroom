@@ -10,6 +10,7 @@
                 <tr>
                     <th>Student Name</th>
                     <th>Status</th>
+                    <th>Payment</th>
                 </tr>
 
                 @forelse( $batch->students as $student)
@@ -27,6 +28,7 @@
                             ">{{ ucwords($student->status) }}
                             </span>
                         </td>
+                        <td>{{ $student->PaymentStatus($batch->id) }}</td>
                     </tr>
 
                 @empty

@@ -24,6 +24,12 @@ class Student extends Model
         return Carbon::parse($dob)->format('Y-m-d');    
     }
 
+    public function PaymentStatus($batch_id)
+    {
+        $payment = $this->reports()->PaymentStatus($batch_id)->first();
+        return $payment->status;
+    }
+
     public function reports()
     {
         return $this->hasMany('App\Report');

@@ -24,4 +24,9 @@ class Report extends Model
     {
         return Carbon::parse( $this->attributes['created_at'] )->toFormattedDateString();
     }
+
+    public function scopePaymentStatus($query, $batch_id)
+    {
+        return $this->where('batch_id', $batch_id);
+    }
 }

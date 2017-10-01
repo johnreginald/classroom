@@ -10,7 +10,7 @@
 
 <div class="form-group">
     <label for="batch">Payment Status</label>
-    {{ Form::select('status', ['PENDING' => "Pending", "SUBMITTED" => "Submitted"], null, ['placeholder' => "Choose Payment Status", 'class' => 'form-control']) }}
+    {{ Form::select('status', ['PENDING' => "Pending", "SUBMITTED" => "Submitted"], 'SUBMITTED', ['placeholder' => "Choose Payment Status", 'class' => 'form-control']) }}
 </div>
 
 <button class="btn btn-primary">{{ $button }}</button>
